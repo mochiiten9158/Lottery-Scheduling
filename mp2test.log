@@ -1,0 +1,415 @@
+starting build
+
+**********************************************************************
+
+Test build
+build xv6 using make
+
+**********************************************************************
+Trying to build project using make
+make
+make[1]: Entering directory '/tmp/tmpOcdTMF/p'
+make[1]: Nothing to be done for 'both'.
+make[1]: Leaving directory '/tmp/tmpOcdTMF/p'
+
+
+test build PASSED
+ (build xv6 using make)
+
+starting getpinfo
+
+**********************************************************************
+
+Test getpinfo
+Call getpinfo() from a user program 
+ The corresponding test file is at tests/mp2/ctests/getpinfo.c
+
+**********************************************************************
+Running xv6 user progam /mp/Downloads/mp2-mochiiten9158-main/tests/mp2/ctests/getpinfo.c
+Project path is: /tmp/tmpOcdTMF/p
+Trying to build project using make
+make
+make[1]: Entering directory '/tmp/tmpOcdTMF/p'
+gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -Werror -fno-omit-frame-pointer -I/mp/Downloads/mp2-mochiiten9158-main -fno-stack-protector -fno-pie -no-pie   -c -o tester.o tester.c
+ld -m    elf_i386 -N -e main -Ttext 0 -o _tester tester.o ulib.o usys.o printf.o umalloc.o
+objdump -S _tester > tester.asm
+objdump -t _tester | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$/d' > tester.sym
+./mkfs fs.img README _cat _echo _forktest _grep _init _kill _ln _ls _mkdir _rm _sh _stressfs _usertests _wc _zombie _tester 
+nmeta 59 (boot, super, log blocks 30 inode blocks 26, bitmap blocks 1) blocks 941 total 1000
+balloc: first 705 blocks have been allocated
+balloc: write bitmap block at sector 58
+make[1]: Leaving directory '/tmp/tmpOcdTMF/p'
+make qemu-nox CPUS=1
+make[1]: Entering directory '/tmp/tmpOcdTMF/p'
+qemu-system-i386 -nographic -drive file=fs.img,index=1,media=disk,format=raw -drive file=xv6.img,index=0,media=disk,format=raw -smp 1 -m 512 
+c[?7l[2J[0mSeaBIOS (version 1.13.0-1ubuntu1.1)
+
+
+iPXE (http://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+1FF8CA10+1FECCA10 CA00
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from Hard Disk..xv6...
+cpu0: starting 0
+sb: size 1000 nblocks 941 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58
+init: starting sh
+$ tester
+tester
+Should print 1 then 2
+
+test getpinfo PASSED (10 of 10)
+ (Call getpinfo() from a user program 
+ The corresponding test file is at tests/mp2/ctests/getpinfo.c)
+
+starting setticket
+
+**********************************************************************
+
+Test setticket
+Call settickets() from a user program 
+ The corresponding test file is at tests/mp2/ctests//setticket.c
+
+**********************************************************************
+Running xv6 user progam /mp/Downloads/mp2-mochiiten9158-main/tests/mp2/ctests/setticket.c
+Project path is: /tmp/tmpOcdTMF/p
+Trying to build project using make
+make
+make[1]: Entering directory '/tmp/tmpOcdTMF/p'
+gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -Werror -fno-omit-frame-pointer -I/mp/Downloads/mp2-mochiiten9158-main -fno-stack-protector -fno-pie -no-pie   -c -o tester.o tester.c
+ld -m    elf_i386 -N -e main -Ttext 0 -o _tester tester.o ulib.o usys.o printf.o umalloc.o
+objdump -S _tester > tester.asm
+objdump -t _tester | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$/d' > tester.sym
+./mkfs fs.img README _cat _echo _forktest _grep _init _kill _ln _ls _mkdir _rm _sh _stressfs _usertests _wc _zombie _tester 
+nmeta 59 (boot, super, log blocks 30 inode blocks 26, bitmap blocks 1) blocks 941 total 1000
+balloc: first 705 blocks have been allocated
+balloc: write bitmap block at sector 58
+make[1]: Leaving directory '/tmp/tmpOcdTMF/p'
+make qemu-nox CPUS=1
+make[1]: Entering directory '/tmp/tmpOcdTMF/p'
+qemu-system-i386 -nographic -drive file=fs.img,index=1,media=disk,format=raw -drive file=xv6.img,index=0,media=disk,format=raw -smp 1 -m 512 
+c[?7l[2J[0mSeaBIOS (version 1.13.0-1ubuntu1.1)
+
+
+iPXE (http://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+1FF8CA10+1FECCA10 CA00
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from Hard Disk..xv6...
+cpu0: starting 0
+sb: size 1000 nblocks 941 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58
+init: starting sh
+$ tester
+tester
+Should print 1 then 2
+
+test setticket PASSED (10 of 10)
+ (Call settickets() from a user program 
+ The corresponding test file is at tests/mp2/ctests//setticket.c)
+
+starting processesinuse
+
+**********************************************************************
+
+Test processesinuse
+Check the number of processes in use by calling getpinfo() 
+ The corresponding test file is at tests/mp2/ctests/processesinuse.c
+
+**********************************************************************
+Running xv6 user progam /mp/Downloads/mp2-mochiiten9158-main/tests/mp2/ctests/processesinuse.c
+Project path is: /tmp/tmpOcdTMF/p
+Trying to build project using make
+make
+make[1]: Entering directory '/tmp/tmpOcdTMF/p'
+gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -Werror -fno-omit-frame-pointer -I/mp/Downloads/mp2-mochiiten9158-main -fno-stack-protector -fno-pie -no-pie   -c -o tester.o tester.c
+ld -m    elf_i386 -N -e main -Ttext 0 -o _tester tester.o ulib.o usys.o printf.o umalloc.o
+objdump -S _tester > tester.asm
+objdump -t _tester | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$/d' > tester.sym
+./mkfs fs.img README _cat _echo _forktest _grep _init _kill _ln _ls _mkdir _rm _sh _stressfs _usertests _wc _zombie _tester 
+nmeta 59 (boot, super, log blocks 30 inode blocks 26, bitmap blocks 1) blocks 941 total 1000
+balloc: first 707 blocks have been allocated
+balloc: write bitmap block at sector 58
+make[1]: Leaving directory '/tmp/tmpOcdTMF/p'
+make qemu-nox CPUS=1
+make[1]: Entering directory '/tmp/tmpOcdTMF/p'
+qemu-system-i386 -nographic -drive file=fs.img,index=1,media=disk,format=raw -drive file=xv6.img,index=0,media=disk,format=raw -smp 1 -m 512 
+c[?7l[2J[0mSeaBIOS (version 1.13.0-1ubuntu1.1)
+
+
+iPXE (http://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+1FF8CA10+1FECCA10 CA00
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from Hard Disk..xv6...
+cpu0: starting 0
+sb: size 1000 nblocks 941 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58
+init: starting sh
+$ tester
+tester
+Spinning...
+
+**** PInfo ****
+pid: 1 tickets: 1 ticks: 25
+pid: 2 tickets: 1 ticks: 17
+pid: 3 tickets: 1 ticks: 511
+pid: 4 tickets: 1 ticks: 1
+pid: 5 tickets: 1 ticks: 1
+pid: 6 tickets: 1 ticks: 1
+pid: 7 tickets: 1 ticks: 1
+pid: 8 tickets: 1 ticks: 1
+pid: 9 tickets: 1 ticks: 1
+pid: 10 tickets: 1 ticks: 1
+Number of processes in use 10
+Should print 1 then 2
+
+test processesinuse PASSED (20 of 20)
+ (Check the number of processes in use by calling getpinfo() 
+ The corresponding test file is at tests/mp2/ctests/processesinuse.c)
+
+starting default_tickets
+
+**********************************************************************
+
+Test default_tickets
+Check the default tickets set for processes 
+ The corresponding test file is at tests/mp2/ctests/default_tickets.c
+
+**********************************************************************
+Running xv6 user progam /mp/Downloads/mp2-mochiiten9158-main/tests/mp2/ctests/default_tickets.c
+Project path is: /tmp/tmpOcdTMF/p
+Trying to build project using make
+make
+make[1]: Entering directory '/tmp/tmpOcdTMF/p'
+gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -Werror -fno-omit-frame-pointer -I/mp/Downloads/mp2-mochiiten9158-main -fno-stack-protector -fno-pie -no-pie   -c -o tester.o tester.c
+ld -m    elf_i386 -N -e main -Ttext 0 -o _tester tester.o ulib.o usys.o printf.o umalloc.o
+objdump -S _tester > tester.asm
+objdump -t _tester | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$/d' > tester.sym
+./mkfs fs.img README _cat _echo _forktest _grep _init _kill _ln _ls _mkdir _rm _sh _stressfs _usertests _wc _zombie _tester 
+nmeta 59 (boot, super, log blocks 30 inode blocks 26, bitmap blocks 1) blocks 941 total 1000
+balloc: first 706 blocks have been allocated
+balloc: write bitmap block at sector 58
+make[1]: Leaving directory '/tmp/tmpOcdTMF/p'
+make qemu-nox CPUS=1
+make[1]: Entering directory '/tmp/tmpOcdTMF/p'
+qemu-system-i386 -nographic -drive file=fs.img,index=1,media=disk,format=raw -drive file=xv6.img,index=0,media=disk,format=raw -smp 1 -m 512 
+c[?7l[2J[0mSeaBIOS (version 1.13.0-1ubuntu1.1)
+
+
+iPXE (http://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+1FF8CA10+1FECCA10 CA00
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from Hard Disk..xv6...
+cpu0: starting 0
+sb: size 1000 nblocks 941 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58
+init: starting sh
+$ tester
+tester
+
+ **** PInfo **** 
+pid: 3 tickets: 1 ticks: 7
+Should print 1 then 2
+
+test default_tickets PASSED (10 of 10)
+ (Check the default tickets set for processes 
+ The corresponding test file is at tests/mp2/ctests/default_tickets.c)
+
+starting high_sleep
+
+**********************************************************************
+
+Test high_sleep
+Check that a process with a low number of tickets runs when a process with a high number of tickets sleeps 
+ The corresponding test file is at tests/mp2/ctests/high_sleep.c
+
+**********************************************************************
+Running xv6 user progam /mp/Downloads/mp2-mochiiten9158-main/tests/mp2/ctests/high_sleep.c
+Project path is: /tmp/tmpOcdTMF/p
+Trying to build project using make
+make
+make[1]: Entering directory '/tmp/tmpOcdTMF/p'
+gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -Werror -fno-omit-frame-pointer -I/mp/Downloads/mp2-mochiiten9158-main -fno-stack-protector -fno-pie -no-pie   -c -o tester.o tester.c
+ld -m    elf_i386 -N -e main -Ttext 0 -o _tester tester.o ulib.o usys.o printf.o umalloc.o
+objdump -S _tester > tester.asm
+objdump -t _tester | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$/d' > tester.sym
+./mkfs fs.img README _cat _echo _forktest _grep _init _kill _ln _ls _mkdir _rm _sh _stressfs _usertests _wc _zombie _tester 
+nmeta 59 (boot, super, log blocks 30 inode blocks 26, bitmap blocks 1) blocks 941 total 1000
+balloc: first 713 blocks have been allocated
+balloc: write bitmap block at sector 58
+make[1]: Leaving directory '/tmp/tmpOcdTMF/p'
+make qemu-nox CPUS=1
+make[1]: Entering directory '/tmp/tmpOcdTMF/p'
+qemu-system-i386 -nographic -drive file=fs.img,index=1,media=disk,format=raw -drive file=xv6.img,index=0,media=disk,format=raw -smp 1 -m 512 
+c[?7l[2J[0mSeaBIOS (version 1.13.0-1ubuntu1.1)
+
+
+iPXE (http://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+1FF8CA10+1FECCA10 CA00
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from Hard Disk..xv6...
+cpu0: starting 0
+sb: size 1000 nblocks 941 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58
+init: starting sh
+$ tester
+tester
+
+ ****PInfo before**** 
+pid: 1 tickets: 1 ticks: 23
+pid: 2 tickets: 1 ticks: 16
+pid: 3 tickets: 10000 ticks: 12
+pid: 4 tickets: 5 ticks: 0
+Spinning...
+
+ ****PInfo after**** 
+pid: 1 tickets: 1 ticks: 23
+pid: 2 tickets: 1 ticks: 16
+pid: 3 tickets: 10000 ticks: 12
+pid: 4 tickets: 5 ticks: 2
+high: 12 12, low: 0 2
+Should print 1 then 2
+
+test high_sleep PASSED (20 of 20)
+ (Check that a process with a low number of tickets runs when a process with a high number of tickets sleeps 
+ The corresponding test file is at tests/mp2/ctests/high_sleep.c)
+
+starting forktickets
+
+**********************************************************************
+
+Test forktickets
+Check that a child process has the same number of tickets as its parent 
+ The corresponding test file is at tests/mp2/ctests/forktickets.c
+
+**********************************************************************
+Running xv6 user progam /mp/Downloads/mp2-mochiiten9158-main/tests/mp2/ctests/forktickets.c
+Project path is: /tmp/tmpOcdTMF/p
+Trying to build project using make
+make
+make[1]: Entering directory '/tmp/tmpOcdTMF/p'
+gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -Werror -fno-omit-frame-pointer -I/mp/Downloads/mp2-mochiiten9158-main -fno-stack-protector -fno-pie -no-pie   -c -o tester.o tester.c
+ld -m    elf_i386 -N -e main -Ttext 0 -o _tester tester.o ulib.o usys.o printf.o umalloc.o
+objdump -S _tester > tester.asm
+objdump -t _tester | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$/d' > tester.sym
+./mkfs fs.img README _cat _echo _forktest _grep _init _kill _ln _ls _mkdir _rm _sh _stressfs _usertests _wc _zombie _tester 
+nmeta 59 (boot, super, log blocks 30 inode blocks 26, bitmap blocks 1) blocks 941 total 1000
+balloc: first 707 blocks have been allocated
+balloc: write bitmap block at sector 58
+make[1]: Leaving directory '/tmp/tmpOcdTMF/p'
+make qemu-nox CPUS=1
+make[1]: Entering directory '/tmp/tmpOcdTMF/p'
+qemu-system-i386 -nographic -drive file=fs.img,index=1,media=disk,format=raw -drive file=xv6.img,index=0,media=disk,format=raw -smp 1 -m 512 
+c[?7l[2J[0mSeaBIOS (version 1.13.0-1ubuntu1.1)
+
+
+iPXE (http://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+1FF8CA10+1FECCA10 CA00
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from Hard Disk..xv6...
+cpu0: starting 0
+sb: size 1000 nblocks 941 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58
+init: starting sh
+$ tester
+tester
+parent: 5, child: 5
+Should print 1 then 2
+
+test forktickets PASSED (20 of 20)
+ (Check that a child process has the same number of tickets as its parent 
+ The corresponding test file is at tests/mp2/ctests/forktickets.c)
+
+starting high_tickets
+
+**********************************************************************
+
+Test high_tickets
+Check that a process with an extremely high number of tickets is more likely to be scheduled 
+ The corresponding test file is at tests/mp2/ctests/high_tickets.c
+
+**********************************************************************
+Running xv6 user progam /mp/Downloads/mp2-mochiiten9158-main/tests/mp2/ctests/high_tickets.c
+Project path is: /tmp/tmpOcdTMF/p
+Trying to build project using make
+make
+make[1]: Entering directory '/tmp/tmpOcdTMF/p'
+gcc -fno-pic -static -fno-builtin -fno-strict-aliasing -O2 -Wall -MD -ggdb -m32 -Werror -fno-omit-frame-pointer -I/mp/Downloads/mp2-mochiiten9158-main -fno-stack-protector -fno-pie -no-pie   -c -o tester.o tester.c
+ld -m    elf_i386 -N -e main -Ttext 0 -o _tester tester.o ulib.o usys.o printf.o umalloc.o
+objdump -S _tester > tester.asm
+objdump -t _tester | sed '1,/SYMBOL TABLE/d; s/ .* / /; /^$/d' > tester.sym
+./mkfs fs.img README _cat _echo _forktest _grep _init _kill _ln _ls _mkdir _rm _sh _stressfs _usertests _wc _zombie _tester 
+nmeta 59 (boot, super, log blocks 30 inode blocks 26, bitmap blocks 1) blocks 941 total 1000
+balloc: first 712 blocks have been allocated
+balloc: write bitmap block at sector 58
+make[1]: Leaving directory '/tmp/tmpOcdTMF/p'
+make qemu-nox CPUS=1
+make[1]: Entering directory '/tmp/tmpOcdTMF/p'
+qemu-system-i386 -nographic -drive file=fs.img,index=1,media=disk,format=raw -drive file=xv6.img,index=0,media=disk,format=raw -smp 1 -m 512 
+c[?7l[2J[0mSeaBIOS (version 1.13.0-1ubuntu1.1)
+
+
+iPXE (http://ipxe.org) 00:03.0 CA00 PCI2.10 PnP PMM+1FF8CA10+1FECCA10 CA00
+Press Ctrl-B to configure iPXE (PCI 00:03.0)...                                                                               
+
+
+Booting from Hard Disk..xv6...
+cpu0: starting 0
+sb: size 1000 nblocks 941 ninodes 200 nlog 30 logstart 2 inodestart 32 bmap start 58
+init: starting sh
+$ tester
+tester
+
+ ****PInfo before**** 
+pid: 1 tickets: 1 ticks: 25
+pid: 2 tickets: 1 ticks: 17
+pid: 3 tickets: 5 ticks: 12
+pid: 4 tickets: 100000 ticks: 0
+Spinning...
+
+ ****PInfo after**** 
+pid: 1 tickets: 1 ticks: 25
+pid: 2 tickets: 1 ticks: 17
+pid: 3 tickets: 5 ticks: 12
+pid: 4 tickets: 100000 ticks: 2
+high: 0 2, low: 12 12
+Should print 1 then 2
+
+test high_tickets PASSED (10 of 10)
+ (Check that a process with an extremely high number of tickets is more likely to be scheduled 
+ The corresponding test file is at tests/mp2/ctests/high_tickets.c)
+
+**********************************************************************
+Summary:
+test build PASSED
+ (build xv6 using make)
+
+test getpinfo PASSED (10 of 10)
+ (Call getpinfo() from a user program 
+ The corresponding test file is at tests/mp2/ctests/getpinfo.c)
+
+test setticket PASSED (10 of 10)
+ (Call settickets() from a user program 
+ The corresponding test file is at tests/mp2/ctests//setticket.c)
+
+test processesinuse PASSED (20 of 20)
+ (Check the number of processes in use by calling getpinfo() 
+ The corresponding test file is at tests/mp2/ctests/processesinuse.c)
+
+test default_tickets PASSED (10 of 10)
+ (Check the default tickets set for processes 
+ The corresponding test file is at tests/mp2/ctests/default_tickets.c)
+
+test high_sleep PASSED (20 of 20)
+ (Check that a process with a low number of tickets runs when a process with a high number of tickets sleeps 
+ The corresponding test file is at tests/mp2/ctests/high_sleep.c)
+
+test forktickets PASSED (20 of 20)
+ (Check that a child process has the same number of tickets as its parent 
+ The corresponding test file is at tests/mp2/ctests/forktickets.c)
+
+test high_tickets PASSED (10 of 10)
+ (Check that a process with an extremely high number of tickets is more likely to be scheduled 
+ The corresponding test file is at tests/mp2/ctests/high_tickets.c)
+
+Passed 8 of 8 tests.
+Overall 8 of 8
+Points 100 of 100
